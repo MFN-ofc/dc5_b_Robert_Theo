@@ -1,7 +1,7 @@
 function combinaisons(nombre) {
     let resultat = [];
-    let nombreString = nombre.toString();
-    let nombreLength = nombreString.length;
+    let nombreStr = nombre.toString();
+    let nombreLength = nombreStr.length;
     
     function permutate(arr, m = []) {
       if (arr.length === 0) {
@@ -14,7 +14,7 @@ function combinaisons(nombre) {
        }
      }
     }
-    permutate(nombreString.split(''));
+    permutate(nombreStr.split(''));
     document.write('nombre entré en paramètre : '+nombre);
     document.write('<br>');
     document.write('combinaisons possibles : '+resultat);
