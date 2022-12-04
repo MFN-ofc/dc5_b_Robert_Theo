@@ -3,4 +3,4 @@ function triAlphabetique(){
     var alphabetTrie = alphabet.split('').sort().reverse().join('');
   console.log(alphabetTrie);
   }
-  triAlphabetique(); // Affiche : abcdefghijklmnopqrstuvwxyz
+  triAlphabetique(); 
