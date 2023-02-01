@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+document.addEventListener("DOMContentLoaded", function(){
+    // Génère un nombre aléatoire entre 12 et 17
+    function getRandomNumber() {
+      return Math.floor(Math.random() * (17 - 12 + 1)) + 12;
+    }
+    // Vérifie si un nombre est déjà stocké dans le localStorage
+    if (localStorage.getItem("random_number") === null) {
+      // Si non, génère un nouveau nombre aléatoire
+      var randomNumber = getRandomNumber();
+      localStorage.setItem("random_number", randomNumber);
+    } else {
+      // Sinon, récupère le nombre stocké dans le localStorage
+      var randomNumber = localStorage.getItem("random_number");
+    }
+  
+    // Affiche le nombre aléatoire dans un élément h3
+    var elt = document.getElementById("random-number");
+    if(elt){
+        elt.innerHTML = randomNumber;
+    }else{
+        console.log('Element not found')
+    }
+  
+    // Incrémente le nombre toutes les 5 secondes
+    setInterval(function() {
+      randomNumber++;
+      elt.innerHTML = randomNumber;
+      localStorage.setItem("random_number", randomNumber);
+    }, 5000);
+});
+    </script>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <div id="random-number"><h3></h3></div>
+
+
+</body>
+</html>
